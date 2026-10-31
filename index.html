@@ -3,16 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Grand Theft Pocket V - All-in-One 3D Edition</title>
+<title>Grand Theft Pocket V - 3D Edition</title>
 
-<!-- Eingebettetes PWA-Manifest & App-Icons (100% in einer einzigen Datei!) -->
-<link rel="manifest" href="data:application/manifest+json;base64,ewogICJuYW1lIjogIkdyYW5kIFRoZWZ0IFBvY2tldCBWIiwKICAic2hvcnRfbmFtZSI6ICJHVFAgViIsCiAgImRlc2NyaXB0aW9uIjogIjNEIE9wZW4tV29ybGQgV2ViR0wgQWN0aW9uIEdhbWUiLAogICJzdGFydF91cmwiOiAiLi9pbmRleC5odG1sIiwKICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKICAib3JpZW50YXRpb24iOiAibGFuZHNjYXBlIiwKICAiYmFja2dyb3VuZF9jb2xvciI6ICIjMDUwNTA4IiwKICAidGhlbWVfY29sb3IiOiAiI2MwMzkyYiIsCiAgImljb25zIjogWwogICAgewogICAgICAic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlIWnBaWGRDYjNnOUlqQWdNQ0ExTVRJZ05URXlJaUIzYVdSMGFEMGlOVEV5SWlCb1pXbG5hSFE5SWpVeE1pSStDaUFnUEhKbFkzUWdkMmxrZEdnOUlqVXhNaUlnYUdWcFoyaDBQU0kxTVRJaUlISjRQU0l4TVRBaUlHWnBiR3c5SWlNd1pEQm1NVFFpTHo0S0lDQThjbVZqZENCNFBTSXlNQ0lnZVQwaU1qQWlJSGRwWkhSb1BTSTBOeklpSUdobGFXZG9kRDBpTkRjeUlpQnllRDBpT1RVaUlHWnBiR3c5SW01dmJtVWlJSE4wY205clpUMGlJMll6T1dNeE1pSWdjM1J5YjJ0bExYZHBaSFJvUFNJeE1pSXZQZ29nSUR4d1lYUm9JR1E5SWswZ01UUXdJREV6TUNCTUlESTFOaUF6T1RBZ1RDQXpOeklnTVRNd0lFd2dNekExSURFek1DQk1JREkxTmlBeU5qQWdUQ0F5TURjZ01UTXdJRm9pSUdacGJHdzlJaU15TjJGbE5qQWlJSE4wY205clpUMGlJMlptWm1abVppSWdjM1J5YjJ0bExYZHBaSFJvUFNJNElpOCtDaUFnUEhSbGVIUWdlRDBpTWpVMklpQjVQU0kwTkRVaUlHWnZiblF0Wm1GdGFXeDVQU0pEYjNWeWFXVnlJRTVsZHl3Z2JXOXViM053WVdObElpQm1iMjUwTFhOcGVtVTlJalV5SWlCbWIyNTBMWGRsYVdkb2REMGlPVEF3SWlCbWFXeHNQU0lqWmpGak5EQm1JaUIwWlhoMExXRnVZMmh2Y2owaWJXbGtaR3hsSWlCc1pYUjBaWEl0YzNCaFkybHVaejBpTkNJK1VFOURTMFZVUEM5MFpYaDBQZ284TDNOMlp6ND0iLAogICAgICAic2l6ZXMiOiAiNTEyeDUxMiIsCiAgICAgICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiLAogICAgICAicHVycG9zZSI6ICJhbnkgbWFza2FibGUiCiAgICB9CiAgXQp9">
+<!-- PWA & Vollbild-App Konfiguration -->
+<link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#c0392b">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="GTP V">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+CiAgPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMTAiIGZpbGw9IiMwZDBmMTQiLz4KICA8cmVjdCB4PSIyMCIgeT0iMjAiIHdpZHRoPSI0NzIiIGhlaWdodD0iNDcyIiByeD0iOTUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2YzOWMxMiIgc3Ryb2tlLXdpZHRoPSIxMiIvPgogIDxwYXRoIGQ9Ik0gMTQwIDEzMCBMIDI1NiAzOTAgTCAzNzIgMTMwIEwgMzA1IDEzMCBMIDI1NiAyNjAgTCAyMDcgMTMwIFoiIGZpbGw9IiMyN2FlNjAiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSI4Ii8+CiAgPHRleHQgeD0iMjU2IiB5PSI0NDUiIGZvbnQtZmFtaWx5PSJDb3VyaWVyIE5ldywgbW9ub3NwYWNlIiBmb250LXNpemU9IjUyIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjZjFjNDBmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBsZXR0ZXItc3BhY2luZz0iNCI+UE9DS0VUPC90ZXh0Pgo8L3N2Zz4=">
 <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+CiAgPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMTAiIGZpbGw9IiMwZDBmMTQiLz4KICA8cmVjdCB4PSIyMCIgeT0iMjAiIHdpZHRoPSI0NzIiIGhlaWdodD0iNDcyIiByeD0iOTUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2YzOWMxMiIgc3Ryb2tlLXdpZHRoPSIxMiIvPgogIDxwYXRoIGQ9Ik0gMTQwIDEzMCBMIDI1NiAzOTAgTCAzNzIgMTMwIEwgMzA1IDEzMCBMIDI1NiAyNjAgTCAyMDcgMTMwIFoiIGZpbGw9IiMyN2FlNjAiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSI4Ii8+CiAgPHRleHQgeD0iMjU2IiB5PSI0NDUiIGZvbnQtZmFtaWx5PSJDb3VyaWVyIE5ldywgbW9ub3NwYWNlIiBmb250LXNpemU9IjUyIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjZjFjNDBmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBsZXR0ZXItc3BhY2luZz0iNCI+UE9DS0VUPC90ZXh0Pgo8L3N2Zz4=">
+
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js').catch(() => {});
+    });
+  }
+</script>
 
 <style>
     * { box-sizing: border-box; user-select: none; -webkit-user-select: none; touch-action: none; margin: 0; padding: 0; }
@@ -46,8 +54,8 @@
 <body>
 
 <div id="startScreen">
-    <h1>GRAND THEFT POCKET V<br><span style="font-size:1.1rem; color:#3498db;">ALL-IN-ONE 3D EDITION</span></h1>
-    <p><b>Komplettes Spiel in nur einer einzigen Datei!</b><br><br>
+    <h1>GRAND THEFT POCKET V<br><span style="font-size:1.1rem; color:#3498db;">3D PWA EDITION</span></h1>
+    <p><b>Vollbild-App mit Auto-Save, 3D-Stadt & Ragdoll-Physik!</b><br><br>
     • <b>Linker Daumen:</b> Laufen & Fahren<br>
     • <b>Oben wischen:</b> 3D-Kamera frei drehen<br>
     • <b>KAMERA-Button:</b> Verfolger-, Action- & Vogelperspektive</p>
@@ -255,6 +263,7 @@ const player = {
 };
 scene.add(player.mesh);
 
+// LocalStorage Save-System
 function saveGameState() {
     try {
         localStorage.setItem('gtp_v_save', JSON.stringify({
@@ -696,8 +705,7 @@ function drawHUD() {
     if (joystick.active) {
         ctx.strokeStyle = 'rgba(255,255,255,0.45)'; ctx.lineWidth = 2;
         ctx.beginPath(); ctx.arc(joystick.startX, joystick.startY, 55, 0, Math.PI * 2); ctx.stroke();
-        ctx.fillStyle = 'rgba(255,255,255,0.75)';
-        ctx.beginPath(); ctx.arc(joystick.curX, joystick.curY, 22, 0, Math.PI * 2); ctx.fill();
+        ctx.fillStyle = 'rgba(255,255,255,0.75)'; ctx.beginPath(); ctx.arc(joystick.curX, joystick.curY, 22, 0, Math.PI * 2); ctx.fill();
     }
     if (player.wasted) {
         ctx.fillStyle = 'rgba(140, 0, 0, 0.6)'; ctx.fillRect(0, 0, W, H);
