@@ -1,7 +1,7 @@
 {
   "name": "Grand Theft Pocket V",
   "short_name": "GTP V",
-  "description": "3D Open-World WebGL Action Game für Mobilgeräte",
+  "description": "3D Open-World WebGL Action Game",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
@@ -10,17 +10,10 @@
   "theme_color": "#c0392b",
   "icons": [
     {
-      "src": "icon-512.png",
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+CiAgPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMTAiIGZpbGw9IiMwZDBmMTQiLz4KICA8cmVjdCB4PSIyMCIgeT0iMjAiIHdpZHRoPSI0NzIiIGhlaWdodD0iNDcyIiByeD0iOTUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2YzOWMxMiIgc3Ryb2tlLXdpZHRoPSIxMiIvPgogIDxwYXRoIGQ9Ik0gMTQwIDEzMCBMIDI1NiAzOTAgTCAzNzIgMTMwIEwgMzA1IDEzMCBMIDI1NiAyNjAgTCAyMDcgMTMwIFoiIGZpbGw9IiMyN2FlNjAiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSI4Ii8+CiAgPHRleHQgeD0iMjU2IiB5PSI0NDUiIGZvbnQtZmFtaWx5PSJDb3VyaWVyIE5ldywgbW9ub3NwYWNlIiBmb250LXNpemU9IjUyIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjZjFjNDBmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBsZXR0ZXItc3BhY2luZz0iNCI+UE9DS0VUPC90ZXh0Pgo8L3N2Zz4=",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "icon-192.png",
-      "sizes": "192x192",
-      "type": "image/png",
+      "type": "image/svg+xml",
       "purpose": "any maskable"
     }
-  ],
-  "categories": ["games", "action"]
+  ]
 }
