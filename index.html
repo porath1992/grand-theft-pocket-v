@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Grand Theft Pocket V - All-in-One 3D Edition</title>
+
+<!-- Eingebettetes PWA-Manifest & App-Icons (100% in einer einzigen Datei!) -->
+<link rel="manifest" href="data:application/manifest+json;base64,ewogICJuYW1lIjogIkdyYW5kIFRoZWZ0IFBvY2tldCBWIiwKICAic2hvcnRfbmFtZSI6ICJHVFAgViIsCiAgImRlc2NyaXB0aW9uIjogIjNEIE9wZW4tV29ybGQgV2ViR0wgQWN0aW9uIEdhbWUiLAogICJzdGFydF91cmwiOiAiLi9pbmRleC5odG1sIiwKICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKICAib3JpZW50YXRpb24iOiAibGFuZHNjYXBlIiwKICAiYmFja2dyb3VuZF9jb2xvciI6ICIjMDUwNTA4IiwKICAidGhlbWVfY29sb3IiOiAiI2MwMzkyYiIsCiAgImljb25zIjogWwogICAgewogICAgICAic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjRiV3h1Y3owaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNQzl6ZG1jaUlIWnBaWGRDYjNnOUlqQWdNQ0ExTVRJZ05URXlJaUIzYVdSMGFEMGlOVEV5SWlCb1pXbG5hSFE5SWpVeE1pSStDaUFnUEhKbFkzUWdkMmxrZEdnOUlqVXhNaUlnYUdWcFoyaDBQU0kxTVRJaUlISjRQU0l4TVRBaUlHWnBiR3c5SWlNd1pEQm1NVFFpTHo0S0lDQThjbVZqZENCNFBTSXlNQ0lnZVQwaU1qQWlJSGRwWkhSb1BTSTBOeklpSUdobGFXZG9kRDBpTkRjeUlpQnllRDBpT1RVaUlHWnBiR3c5SW01dmJtVWlJSE4wY205clpUMGlJMll6T1dNeE1pSWdjM1J5YjJ0bExYZHBaSFJvUFNJeE1pSXZQZ29nSUR4d1lYUm9JR1E5SWswZ01UUXdJREV6TUNCTUlESTFOaUF6T1RBZ1RDQXpOeklnTVRNd0lFd2dNekExSURFek1DQk1JREkxTmlBeU5qQWdUQ0F5TURjZ01UTXdJRm9pSUdacGJHdzlJaU15TjJGbE5qQWlJSE4wY205clpUMGlJMlptWm1abVppSWdjM1J5YjJ0bExYZHBaSFJvUFNJNElpOCtDaUFnUEhSbGVIUWdlRDBpTWpVMklpQjVQU0kwTkRVaUlHWnZiblF0Wm1GdGFXeDVQU0pEYjNWeWFXVnlJRTVsZHl3Z2JXOXViM053WVdObElpQm1iMjUwTFhOcGVtVTlJalV5SWlCbWIyNTBMWGRsYVdkb2REMGlPVEF3SWlCbWFXeHNQU0lqWmpGak5EQm1JaUIwWlhoMExXRnVZMmh2Y2owaWJXbGtaR3hsSWlCc1pYUjBaWEl0YzNCaFkybHVaejBpTkNJK1VFOURTMFZVUEM5MFpYaDBQZ284TDNOMlp6ND0iLAogICAgICAic2l6ZXMiOiAiNTEyeDUxMiIsCiAgICAgICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiLAogICAgICAicHVycG9zZSI6ICJhbnkgbWFza2FibGUiCiAgICB9CiAgXQp9">
+<meta name="theme-color" content="#c0392b">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="GTP V">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+CiAgPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMTAiIGZpbGw9IiMwZDBmMTQiLz4KICA8cmVjdCB4PSIyMCIgeT0iMjAiIHdpZHRoPSI0NzIiIGhlaWdodD0iNDcyIiByeD0iOTUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2YzOWMxMiIgc3Ryb2tlLXdpZHRoPSIxMiIvPgogIDxwYXRoIGQ9Ik0gMTQwIDEzMCBMIDI1NiAzOTAgTCAzNzIgMTMwIEwgMzA1IDEzMCBMIDI1NiAyNjAgTCAyMDcgMTMwIFoiIGZpbGw9IiMyN2FlNjAiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSI4Ii8+CiAgPHRleHQgeD0iMjU2IiB5PSI0NDUiIGZvbnQtZmFtaWx5PSJDb3VyaWVyIE5ldywgbW9ub3NwYWNlIiBmb250LXNpemU9IjUyIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjZjFjNDBmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBsZXR0ZXItc3BhY2luZz0iNCI+UE9DS0VUPC90ZXh0Pgo8L3N2Zz4=">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+CiAgPHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMTAiIGZpbGw9IiMwZDBmMTQiLz4KICA8cmVjdCB4PSIyMCIgeT0iMjAiIHdpZHRoPSI0NzIiIGhlaWdodD0iNDcyIiByeD0iOTUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2YzOWMxMiIgc3Ryb2tlLXdpZHRoPSIxMiIvPgogIDxwYXRoIGQ9Ik0gMTQwIDEzMCBMIDI1NiAzOTAgTCAzNzIgMTMwIEwgMzA1IDEzMCBMIDI1NiAyNjAgTCAyMDcgMTMwIFoiIGZpbGw9IiMyN2FlNjAiIHN0cm9rZT0iI2ZmZmZmZiIgc3Ryb2tlLXdpZHRoPSI4Ii8+CiAgPHRleHQgeD0iMjU2IiB5PSI0NDUiIGZvbnQtZmFtaWx5PSJDb3VyaWVyIE5ldywgbW9ub3NwYWNlIiBmb250LXNpemU9IjUyIiBmb250LXdlaWdodD0iOTAwIiBmaWxsPSIjZjFjNDBmIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBsZXR0ZXItc3BhY2luZz0iNCI+UE9DS0VUPC90ZXh0Pgo8L3N2Zz4=">
+
+<style>
+    * { box-sizing: border-box; user-select: none; -webkit-user-select: none; touch-action: none; margin: 0; padding: 0; }
+    body, html { width: 100%; height: 100%; overflow: hidden; background-color: #050508; font-family: 'Courier New', Courier, monospace; }
+    #webglCanvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+    #hudCanvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; pointer-events: auto; }
+    #startScreen {
+        position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        background: radial-gradient(circle, #1a1c24 0%, #050508 100%);
+        color: #fff; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; z-index: 20; padding: 20px;
+    }
+    h1 { font-size: 2.0rem; color: #f39c12; text-shadow: 3px 3px 0 #c0392b, -1px -1px 0 #000; margin-bottom: 10px; letter-spacing: 2px; }
+    p { color: #ccc; font-size: 0.85rem; max-width: 440px; margin-bottom: 22px; line-height: 1.45; }
+    .btn-start {
+        background: linear-gradient(180deg, #2ecc71, #27ae60); color: #fff; border: 2px solid #fff;
+        padding: 15px 35px; font-size: 1.2rem; font-weight: bold; border-radius: 8px; box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+        cursor: pointer;
+    }
+    #shopModal {
+        display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+        width: 90%; max-width: 400px; background: rgba(12, 12, 16, 0.96); border: 3px solid #e74c3c;
+        border-radius: 8px; color: #fff; padding: 18px; z-index: 30; box-shadow: 0 0 35px rgba(231, 76, 60, 0.7);
+    }
+    #shopModal h2 { color: #e74c3c; text-align: center; margin-bottom: 12px; font-size: 1.4rem; }
+    .shop-item { display: flex; justify-content: space-between; align-items: center; background: #1e2028; padding: 10px; margin-bottom: 8px; border-radius: 4px; border-left: 4px solid #f39c12; }
+    .shop-btn { background: #27ae60; color: #fff; border: none; padding: 8px 14px; font-weight: bold; font-family: inherit; border-radius: 4px; }
+    .close-btn { width: 100%; background: #c0392b; color: #fff; border: none; padding: 10px; font-weight: bold; font-family: inherit; margin-top: 10px; border-radius: 4px; }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+<div id="startScreen">
+    <h1>GRAND THEFT POCKET V<br><span style="font-size:1.1rem; color:#3498db;">ALL-IN-ONE 3D EDITION</span></h1>
+    <p><b>Komplettes Spiel in nur einer einzigen Datei!</b><br><br>
+    • <b>Linker Daumen:</b> Laufen & Fahren<br>
+    • <b>Oben wischen:</b> 3D-Kamera frei drehen<br>
+    • <b>KAMERA-Button:</b> Verfolger-, Action- & Vogelperspektive</p>
+    <div class="btn-start" id="startBtn">LOS SANTOS BETRETEN</div>
+</div>
+
+<div id="shopModal">
+    <h2>AMMU-NATION 3D</h2>
+    <div id="shopContent"></div>
+    <button class="close-btn" id="closeShopBtn">LADEN VERLASSEN</button>
+</div>
+
+<canvas id="webglCanvas"></canvas>
+<canvas id="hudCanvas"></canvas>
+
+<script>
+const webglCanvas = document.getElementById('webglCanvas');
+const hudCanvas = document.getElementById('hudCanvas');
+const ctx = hudCanvas.getContext('2d');
+let W = hudCanvas.width = window.innerWidth;
+let H = hudCanvas.height = window.innerHeight;
+
+let audioCtx = null;
+function initAudio() {
+    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+}
+
+function playSound(type) {
+    if (!audioCtx) return;
+    const now = audioCtx.currentTime;
+    try {
+        if (type === 'shoot' || type === 'shotgun' || type === 'minigun') {
+            const dur = type === 'shotgun' ? 0.22 : (type === 'minigun' ? 0.05 : 0.09);
+            const buf = audioCtx.createBuffer(1, audioCtx.sampleRate * dur, audioCtx.sampleRate);
+            const data = buf.getChannelData(0);
+            for (let i = 0; i < buf.length; i++) data[i] = Math.random() * 2 - 1;
+            const noise = audioCtx.createBufferSource(); noise.buffer = buf;
+            const filter = audioCtx.createBiquadFilter(); filter.type = 'bandpass';
+            filter.frequency.setValueAtTime(type === 'shotgun' ? 500 : 1200, now);
+            const gain = audioCtx.createGain(); gain.gain.setValueAtTime(0.25, now);
+            gain.gain.exponentialRampToValueAtTime(0.01, now + dur);
+            noise.connect(filter); filter.connect(gain); gain.connect(audioCtx.destination);
+            noise.start(now);
+        } else if (type === 'explosion') {
+            const dur = 0.85;
+            const buf = audioCtx.createBuffer(1, audioCtx.sampleRate * dur, audioCtx.sampleRate);
+            const data = buf.getChannelData(0);
+            for (let i = 0; i < buf.length; i++) data[i] = (Math.random() * 2 - 1) * Math.exp(-i / (audioCtx.sampleRate * 0.3));
+            const noise = audioCtx.createBufferSource(); noise.buffer = buf;
+            const filter = audioCtx.createBiquadFilter(); filter.type = 'lowpass'; filter.frequency.setValueAtTime(300, now);
+            const gain = audioCtx.createGain(); gain.gain.setValueAtTime(0.8, now);
+            gain.gain.exponentialRampToValueAtTime(0.01, now + dur);
+            noise.connect(filter); filter.connect(gain); gain.connect(audioCtx.destination);
+            noise.start(now);
+        } else if (type === 'cash') {
+            const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+            osc.frequency.setValueAtTime(1150, now); osc.frequency.setValueAtTime(1600, now + 0.07);
+            gain.gain.setValueAtTime(0.18, now); gain.gain.exponentialRampToValueAtTime(0.01, now + 0.16);
+            osc.connect(gain); gain.connect(audioCtx.destination); osc.start(now); osc.stop(now + 0.16);
+        } else if (type === 'scream') {
+            const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+            osc.type = 'sawtooth'; osc.frequency.setValueAtTime(700, now);
+            osc.frequency.exponentialRampToValueAtTime(280, now + 0.35);
+            gain.gain.setValueAtTime(0.12, now); gain.gain.exponentialRampToValueAtTime(0.01, now + 0.35);
+            osc.connect(gain); gain.connect(audioCtx.destination); osc.start(now); osc.stop(now + 0.35);
+        }
+    } catch(e) {}
+}
+
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x0b0e17);
+scene.fog = new THREE.FogExp2(0x0b0e17, 0.0009);
+const camera = new THREE.PerspectiveCamera(62, W / H, 2, 1800);
+const renderer = new THREE.WebGLRenderer({ canvas: webglCanvas, antialias: true, powerPreference: 'high-performance' });
+renderer.setSize(W, H);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+window.addEventListener('resize', () => {
+    W = hudCanvas.width = window.innerWidth; H = hudCanvas.height = window.innerHeight;
+    camera.aspect = W / H; camera.updateProjectionMatrix(); renderer.setSize(W, H);
+});
+
+scene.add(new THREE.AmbientLight(0x6c7a89, 0.75));
+const sunLight = new THREE.DirectionalLight(0xffd194, 0.9);
+sunLight.position.set(400, 700, 300); scene.add(sunLight);
+const fxLight = new THREE.PointLight(0xff6600, 0, 260); fxLight.position.set(0, 30, 0); scene.add(fxLight);
+
+function createBuildingTexture(baseHue) {
+    const c = document.createElement('canvas'); c.width = 64; c.height = 128;
+    const g = c.getContext('2d');
+    g.fillStyle = `hsl(${baseHue}, 18%, 20%)`; g.fillRect(0, 0, 64, 128);
+    for (let y = 6; y < 120; y += 12) {
+        for (let x = 6; x < 58; x += 10) {
+            g.fillStyle = Math.random() < 0.55 ? (Math.random() < 0.8 ? '#f9e79f' : '#85c1e9') : '#11161d';
+            g.fillRect(x, y, 6, 8);
+        }
+    }
+    const tex = new THREE.CanvasTexture(c);
+    tex.wrapS = THREE.RepeatWrapping; tex.wrapT = THREE.RepeatWrapping;
+    return tex;
+}
+
+const BLOCK_SIZE = 360; const ROAD_WIDTH = 120; const GRID_COUNT = 8; const WORLD_SIZE = BLOCK_SIZE * GRID_COUNT;
+const groundMesh = new THREE.Mesh(new THREE.PlaneGeometry(WORLD_SIZE + 800, WORLD_SIZE + 800), new THREE.MeshLambertMaterial({ color: 0x1e2229 }));
+groundMesh.rotation.x = -Math.PI / 2; groundMesh.position.set(WORLD_SIZE / 2, 0, WORLD_SIZE / 2); scene.add(groundMesh);
+
+const lineMat = new THREE.MeshBasicMaterial({ color: 0xf1c40f });
+for (let i = 0; i < GRID_COUNT; i++) {
+    const pos = i * BLOCK_SIZE + ROAD_WIDTH / 2;
+    const hLine = new THREE.Mesh(new THREE.PlaneGeometry(WORLD_SIZE, 2), lineMat);
+    hLine.rotation.x = -Math.PI / 2; hLine.position.set(WORLD_SIZE / 2, 0.15, pos); scene.add(hLine);
+    const vLine = new THREE.Mesh(new THREE.PlaneGeometry(2, WORLD_SIZE), lineMat);
+    vLine.rotation.x = -Math.PI / 2; vLine.position.set(pos, 0.15, WORLD_SIZE / 2); scene.add(vLine);
+}
+
+const buildings = [];
+const sidewalkMat = new THREE.MeshLambertMaterial({ color: 0x4a5058 });
+const parkMat = new THREE.MeshLambertMaterial({ color: 0x1e5631 });
+const roofMat = new THREE.MeshLambertMaterial({ color: 0x22272e });
+
+for (let gx = 0; gx < GRID_COUNT; gx++) {
+    for (let gy = 0; gy < GRID_COUNT; gy++) {
+        const bx = gx * BLOCK_SIZE + ROAD_WIDTH; const bz = gy * BLOCK_SIZE + ROAD_WIDTH;
+        const bw = BLOCK_SIZE - ROAD_WIDTH; const bd = BLOCK_SIZE - ROAD_WIDTH;
+        const swMesh = new THREE.Mesh(new THREE.BoxGeometry(bw, 3, bd), sidewalkMat);
+        swMesh.position.set(bx + bw / 2, 1.5, bz + bd / 2); scene.add(swMesh);
+        const isPark = (gx === 3 && gy === 3) || (gx === 4 && gy === 4);
+        const bData = { x: bx + 15, z: bz + 15, w: bw - 30, d: bd - 30, isPark };
+        buildings.push(bData);
+        if (isPark) {
+            const pMesh = new THREE.Mesh(new THREE.BoxGeometry(bData.w, 3.6, bData.d), parkMat);
+            pMesh.position.set(bData.x + bData.w / 2, 1.8, bData.z + bData.d / 2); scene.add(pMesh);
+        } else {
+            const bHeight = 75 + Math.random() * 145;
+            const wallMat = new THREE.MeshLambertMaterial({ map: createBuildingTexture(200 + Math.random() * 45) });
+            const bMesh = new THREE.Mesh(new THREE.BoxGeometry(bData.w, bHeight, bData.d), [wallMat, wallMat, roofMat, roofMat, wallMat, wallMat]);
+            bMesh.position.set(bData.x + bData.w / 2, bHeight / 2 + 3, bData.z + bData.d / 2); scene.add(bMesh);
+        }
+    }
+}
+
+const ammuNation = { x: 1 * BLOCK_SIZE + ROAD_WIDTH / 2, z: 1 * BLOCK_SIZE + ROAD_WIDTH / 2, r: 38 };
+const missionHub = { x: 5 * BLOCK_SIZE + ROAD_WIDTH / 2, z: 2 * BLOCK_SIZE + ROAD_WIDTH / 2, r: 38 };
+const ammuCorona = new THREE.Mesh(new THREE.CylinderGeometry(32, 32, 45, 20, 1, true), new THREE.MeshBasicMaterial({ color: 0xe74c3c, transparent: true, opacity: 0.45, side: THREE.DoubleSide }));
+ammuCorona.position.set(ammuNation.x, 22, ammuNation.z); scene.add(ammuCorona);
+const missionCorona = new THREE.Mesh(new THREE.CylinderGeometry(32, 32, 45, 20, 1, true), new THREE.MeshBasicMaterial({ color: 0xf1c40f, transparent: true, opacity: 0.45, side: THREE.DoubleSide }));
+missionCorona.position.set(missionHub.x, 22, missionHub.z); scene.add(missionCorona);
+
+function createHumanoidMesh(shirtColor, isCop = false) {
+    const group = new THREE.Group();
+    const skinMat = new THREE.MeshLambertMaterial({ color: 0xf5cba7 });
+    const shirtMat = new THREE.MeshLambertMaterial({ color: shirtColor });
+    const pantsMat = new THREE.MeshLambertMaterial({ color: isCop ? 0x111622 : 0x2c3e50 });
+    const torso = new THREE.Mesh(new THREE.BoxGeometry(5, 8, 9), shirtMat); torso.position.y = 11; group.add(torso);
+    const head = new THREE.Mesh(new THREE.BoxGeometry(5.5, 5.5, 5.5), skinMat); head.position.y = 18; group.add(head);
+    const leftLeg = new THREE.Mesh(new THREE.BoxGeometry(3.5, 7, 3.5), pantsMat); leftLeg.position.set(0, 3.5, -2.5);
+    const rightLeg = new THREE.Mesh(new THREE.BoxGeometry(3.5, 7, 3.5), pantsMat); rightLeg.position.set(0, 3.5, 2.5);
+    const leftArm = new THREE.Mesh(new THREE.BoxGeometry(3, 7, 3), shirtMat); leftArm.position.set(0, 11, -6);
+    const rightArm = new THREE.Mesh(new THREE.BoxGeometry(4.5, 3, 3), shirtMat); rightArm.position.set(3, 12, 6);
+    const gun = new THREE.Mesh(new THREE.BoxGeometry(6, 2, 1.5), new THREE.MeshBasicMaterial({ color: 0x111111 })); gun.position.set(6.5, 12.5, 6);
+    group.add(leftLeg, rightLeg, leftArm, rightArm, gun);
+    group.userData = { torso, leftLeg, rightLeg, leftArm, rightArm, shirtMat };
+    return group;
+}
+
+function createVehicleMesh(bp) {
+    const group = new THREE.Group();
+    const bodyMat = new THREE.MeshLambertMaterial({ color: bp.color });
+    const darkMat = new THREE.MeshLambertMaterial({ color: 0x15191f });
+    const glassMat = new THREE.MeshLambertMaterial({ color: 0x283747 });
+    if (bp.isTank) {
+        const hull = new THREE.Mesh(new THREE.BoxGeometry(bp.w, 14, bp.h), bodyMat); hull.position.y = 9; group.add(hull);
+        const turret = new THREE.Mesh(new THREE.BoxGeometry(28, 10, 22), bodyMat); turret.position.set(-2, 20, 0);
+        const barrel = new THREE.Mesh(new THREE.CylinderGeometry(2.2, 2.2, 38, 8), darkMat); barrel.rotation.z = Math.PI / 2; barrel.position.set(22, 20, 0);
+        group.add(turret, barrel);
+    } else {
+        const chH = bp.name === 'SWAT-Van' ? 16 : 9;
+        const chassis = new THREE.Mesh(new THREE.BoxGeometry(bp.w, chH, bp.h), bodyMat); chassis.position.y = chH / 2 + 3; group.add(chassis);
+        const cabin = new THREE.Mesh(new THREE.BoxGeometry(bp.w * 0.55, 7.5, bp.h - 3), glassMat); cabin.position.set(-bp.w * 0.06, chH + 5.5, 0); group.add(cabin);
+    }
+    return group;
+}
+
+const characters = [
+    { name: 'MICHAEL', color: 0x3498db, hex: '#3498db' },
+    { name: 'FRANKLIN', color: 0x2ecc71, hex: '#2ecc71' },
+    { name: 'TREVOR', color: 0xe67e22, hex: '#e67e22' }
+];
+let currentCharIdx = 0;
+
+const weapons = [
+    { name: 'Pistole', fireRate: 250, speed: 15, dmg: 26, spread: 0.05, count: 1, explosive: false, owned: true, price: 0 },
+    { name: 'Micro-Uzi', fireRate: 85, speed: 16, dmg: 15, spread: 0.15, count: 1, explosive: false, owned: true, price: 300 },
+    { name: 'Schrotflinte', fireRate: 620, speed: 14, dmg: 22, spread: 0.26, count: 6, explosive: false, owned: false, price: 650 },
+    { name: 'Minigun', fireRate: 45, speed: 17, dmg: 20, spread: 0.11, count: 1, explosive: false, owned: false, price: 1800 },
+    { name: 'Raketenwerfer', fireRate: 1050, speed: 11, dmg: 240, spread: 0.02, count: 1, explosive: true, owned: false, price: 2500 }
+];
+
+const player = {
+    x: BLOCK_SIZE * 3 + ROAD_WIDTH / 2, z: BLOCK_SIZE * 3 + ROAD_WIDTH / 2, y: 0, angle: 0, radius: 11,
+    hp: 100, maxHp: 100, armor: 50, maxArmor: 100, cash: 600, inCar: null, weaponIdx: 0, lastShot: 0,
+    wanted: 0, wantedDecayTimer: 0, wasted: false, wastedTimer: 0, abilityActive: false, abilityCharge: 100,
+    walkCycle: 0, mesh: createHumanoidMesh(0x3498db, false)
+};
+scene.add(player.mesh);
+
+function saveGameState() {
+    try {
+        localStorage.setItem('gtp_v_save', JSON.stringify({
+            cash: player.cash,
+            armor: player.armor,
+            ownedWeapons: weapons.map(w => w.owned)
+        }));
+    } catch(e) {}
+}
+
+function loadGameState() {
+    try {
+        const raw = localStorage.getItem('gtp_v_save');
+        if (!raw) return;
+        const data = JSON.parse(raw);
+        if (typeof data.cash === 'number') player.cash = data.cash;
+        if (typeof data.armor === 'number') player.armor = data.armor;
+        if (Array.isArray(data.ownedWeapons)) {
+            data.ownedWeapons.forEach((isOwned, i) => { if (weapons[i]) weapons[i].owned = !!isOwned; });
+        }
+    } catch(e) {}
+}
+loadGameState();
+
+let camMode = 0; let camYaw = 0; let camPitch = 0.42;
+
+const CAR_TYPES = [
+    { name: 'Sportwagen', w: 46, h: 22, maxSpeed: 9.8, accel: 0.26, hp: 130, color: 0xe74c3c },
+    { name: 'Muscle-Car', w: 48, h: 24, maxSpeed: 8.2, accel: 0.20, hp: 160, color: 0xf39c12 },
+    { name: 'Streifenwagen', w: 48, h: 24, maxSpeed: 8.8, accel: 0.24, hp: 180, color: 0x111111, isPolice: true },
+    { name: 'SWAT-Van', w: 58, h: 28, maxSpeed: 6.5, accel: 0.18, hp: 420, color: 0x1b2631, isPolice: true },
+    { name: 'Rhino-Panzer', w: 68, h: 36, maxSpeed: 5.0, accel: 0.14, hp: 1400, color: 0x4b5320, isTank: true, isPolice: true }
+];
+
+const cars = []; const peds = []; const bullets = []; const particles3D = []; const floatingTexts = [];
+let activeMission = null;
+
+function spawnCar(x, z, typeIdx = null, isCop = false) {
+    let tIdx = typeIdx !== null ? typeIdx : (isCop ? (player.wanted >= 5 ? 4 : (player.wanted >= 4 ? 3 : 2)) : Math.floor(Math.random() * 2));
+    const bp = CAR_TYPES[tIdx]; const mesh = createVehicleMesh(bp); scene.add(mesh);
+    cars.push({ x, z, speed: 0, angle: Math.floor(Math.random() * 4) * (Math.PI / 2), w: bp.w, h: bp.h, maxSpeed: bp.maxSpeed, accel: bp.accel, hp: bp.hp, isPolice: !!bp.isPolice, isTank: !!bp.isTank, hasDriver: true, burningTimer: 0, tankShootTimer: 0, mesh });
+}
+
+function spawnPed(x, z, isCop = false, isTarget = false) {
+    const col = isTarget ? 0xe74c3c : (isCop ? 0x1a252f : new THREE.Color(`hsl(${Math.floor(Math.random()*360)}, 65%, 50%)`).getHex());
+    const mesh = createHumanoidMesh(col, isCop); scene.add(mesh);
+    peds.push({ x, z, y: 0, vx: 0, vy: 0, vz: 0, angle: Math.random() * Math.PI * 2, radius: 9, hp: isTarget ? 180 : (isCop ? 65 : 30), isCop, isTarget, ragdoll: false, walkCycle: Math.random() * 10, shootTimer: 0, mesh });
+}
+
+for (let i = 0; i < 24; i++) spawnCar(Math.random() * WORLD_SIZE, Math.random() * WORLD_SIZE);
+for (let i = 0; i < 35; i++) spawnPed(Math.random() * WORLD_SIZE, Math.random() * WORLD_SIZE);
+
+function checkBuildingCollision(x, z, radius) {
+    if (x - radius < 0 || x + radius > WORLD_SIZE || z - radius < 0 || z + radius > WORLD_SIZE) return true;
+    for (let b of buildings) {
+        if (b.isPark) continue;
+        const cx = Math.max(b.x, Math.min(x, b.x + b.w)); const cz = Math.max(b.z, Math.min(z, b.z + b.d));
+        const dx = x - cx; const dz = z - cz;
+        if ((dx * dx + dz * dz) < (radius * radius)) return true;
+    }
+    return false;
+}
+
+function createBloodDecal(x, z) {
+    const blood = new THREE.Mesh(new THREE.CircleGeometry(8 + Math.random() * 6, 10), new THREE.MeshBasicMaterial({ color: 0x8a0707, transparent: true, opacity: 0.8 }));
+    blood.rotation.x = -Math.PI / 2; blood.position.set(x, 0.25, z); scene.add(blood);
+}
+
+function spawn3DParticle(x, y, z, vx, vy, vz, colorHex, size, life) {
+    const mesh = new THREE.Mesh(new THREE.BoxGeometry(size, size, size), new THREE.MeshBasicMaterial({ color: colorHex }));
+    mesh.position.set(x, y, z); scene.add(mesh);
+    particles3D.push({ mesh, vx, vy, vz, life, maxLife: life });
+}
+
+function triggerExplosion(x, z) {
+    playSound('explosion'); fxLight.position.set(x, 35, z); fxLight.intensity = 4.5;
+    for (let i = 0; i < 28; i++) {
+        const ang = Math.random() * Math.PI * 2; const spd = 2 + Math.random() * 8;
+        spawn3DParticle(x, 8, z, Math.cos(ang) * spd, 3 + Math.random() * 9, Math.sin(ang) * spd, Math.random() < 0.6 ? 0xff4500 : 0xf1c40f, 6 + Math.random() * 8, 35);
+    }
+    const r = 115; const dp = Math.hypot(player.x - x, player.z - z);
+    if (dp < r && !(player.abilityActive && currentCharIdx === 2)) applyDamageToPlayer((1 - dp / r) * 85);
+    for (let p of peds) {
+        if (Math.hypot(p.x - x, p.z - z) < r) {
+            const pushAng = Math.atan2(p.z - z, p.x - x);
+            p.ragdoll = true; p.vx = Math.cos(pushAng) * 9; p.vz = Math.sin(pushAng) * 9; p.vy = 11 + Math.random() * 5; p.hp = 0;
+        }
+    }
+    for (let c of cars) if (Math.hypot(c.x - x, c.z - z) < r && c.hp > 0) c.hp -= 190;
+    if (activeMission && activeMission.type === 'RAMPAGE') {
+        activeMission.current++; if (activeMission.current >= activeMission.needed) completeMission();
+    }
+    addWanted(1.2);
+}
+
+function applyDamageToPlayer(amount) {
+    if (player.armor > 0) { player.armor = Math.max(0, player.armor - amount * 0.7); player.hp -= amount * 0.3; }
+    else player.hp -= amount;
+}
+
+function addWanted(amount) { player.wanted = Math.min(5, player.wanted + amount); player.wantedDecayTimer = 550; }
+
+function startNewMission() {
+    if (activeMission) return;
+    const types = ['HITMAN', 'GETAWAY', 'RAMPAGE'];
+    const type = types[Math.floor(Math.random() * types.length)];
+    if (type === 'HITMAN') {
+        const tx = Math.random() * (WORLD_SIZE - 300) + 150; const tz = Math.random() * (WORLD_SIZE - 300) + 150;
+        spawnPed(tx, tz, false, true); spawnPed(tx + 25, tz, true, false);
+        activeMission = { type: 'HITMAN', title: '3D-Kopfgeldjagd', desc: 'Schalte die rote Zielperson aus!', reward: 1400 };
+    } else if (type === 'GETAWAY') {
+        addWanted(3.0); activeMission = { type: 'GETAWAY', title: 'Fluchtfahrer', desc: 'Entkomme der Polizei (0 Sterne)!', reward: 1500 };
+    } else {
+        activeMission = { type: 'RAMPAGE', title: 'Pyromanie', desc: 'Sprenge 3 Fahrzeuge in die Luft!', needed: 3, current: 0, reward: 1200 };
+    }
+    floatingTexts.push({ text: `MISSION: ${activeMission.title}`, color: '#f1c40f', life: 80 });
+}
+
+function completeMission() {
+    player.cash += activeMission.reward; playSound('cash'); saveGameState();
+    floatingTexts.push({ text: `MISSION ERFÜLLT! +$${activeMission.reward}`, color: '#2ecc71', life: 95 });
+    activeMission = null;
+}
+
+function openAmmuNation() {
+    const shopDiv = document.getElementById('shopContent');
+    shopDiv.innerHTML = `<div class="shop-item"><div><b>Kevlar-Rüstung</b><br><small>Voller Schutzbalken</small></div><button class="shop-btn" onclick="buyItem('armor', 250)">$250</button></div>`;
+    weapons.forEach((w, idx) => {
+        if (!w.owned) shopDiv.innerHTML += `<div class="shop-item"><div><b>${w.name}</b><br><small>Schaden: ${w.dmg}</small></div><button class="shop-btn" onclick="buyItem('weapon', ${w.price}, ${idx})">$${w.price}</button></div>`;
+    });
+    document.getElementById('shopModal').style.display = 'block';
+}
+
+window.buyItem = function(type, price, idx) {
+    if (player.cash >= price) {
+        player.cash -= price; playSound('cash');
+        if (type === 'armor') player.armor = player.maxArmor;
+        if (type === 'weapon') weapons[idx].owned = true;
+        saveGameState();
+        openAmmuNation();
+    } else alert("Zu wenig Bargeld!");
+};
+
+document.getElementById('closeShopBtn').addEventListener('click', () => { document.getElementById('shopModal').style.display = 'none'; });
+
+const joystick = { active: false, id: null, startX: 0, startY: 0, curX: 0, curY: 0, dist: 0, angle: 0 };
+const camTouch = { active: false, id: null, lastX: 0, lastY: 0 };
+let isFiring = false; let fireTouchId = null;
+
+function getButtons() {
+    return {
+        shoot:  { x: W - 65,  y: H - 75,  r: 40, label: 'FEUER', color: '#c0392b' },
+        car:    { x: W - 150, y: H - 65,  r: 34, label: player.inCar ? 'RAUS' : 'AUTO', color: '#2980b9' },
+        weapon: { x: W - 65,  y: H - 165, r: 32, label: 'WAFFE', color: '#8e44ad' },
+        spec:   { x: W - 145, y: H - 150, r: 32, label: 'SPEZIAL', color: '#d35400' },
+        charSw: { x: 55,      y: 90,      r: 26, label: 'CHAR', color: characters[currentCharIdx].hex },
+        camBtn: { x: 125,     y: 90,      r: 26, label: 'KAMERA', color: '#34495e' }
+    };
+}
+
+hudCanvas.addEventListener('touchstart', e => {
+    e.preventDefault(); initAudio(); const btns = getButtons();
+    for (let t of e.changedTouches) {
+        const tx = t.clientX; const ty = t.clientY;
+        if (Math.hypot(tx - btns.charSw.x, ty - btns.charSw.y) < btns.charSw.r + 10) {
+            currentCharIdx = (currentCharIdx + 1) % characters.length; player.abilityActive = false;
+            player.mesh.userData.shirtMat.color.setHex(characters[currentCharIdx].color);
+            floatingTexts.push({ text: characters[currentCharIdx].name, color: characters[currentCharIdx].hex, life: 45 }); continue;
+        }
+        if (Math.hypot(tx - btns.camBtn.x, ty - btns.camBtn.y) < btns.camBtn.r + 10) {
+            camMode = (camMode + 1) % 3;
+            floatingTexts.push({ text: ['3D VERFOLGER NAH', '3D ACTION FERN', 'HELIKOPTER SICHT'][camMode], color: '#3498db', life: 45 }); continue;
+        }
+        if (Math.hypot(tx - btns.shoot.x, ty - btns.shoot.y) < btns.shoot.r + 10) { isFiring = true; fireTouchId = t.identifier; continue; }
+        if (Math.hypot(tx - btns.car.x, ty - btns.car.y) < btns.car.r + 10) { toggleVehicle(); continue; }
+        if (Math.hypot(tx - btns.weapon.x, ty - btns.weapon.y) < btns.weapon.r + 10) {
+            let next = (player.weaponIdx + 1) % weapons.length; while (!weapons[next].owned) next = (next + 1) % weapons.length;
+            player.weaponIdx = next; floatingTexts.push({ text: weapons[player.weaponIdx].name, color: '#fff', life: 45 }); continue;
+        }
+        if (Math.hypot(tx - btns.spec.x, ty - btns.spec.y) < btns.spec.r + 10) { if (player.abilityCharge > 20) player.abilityActive = !player.abilityActive; continue; }
+        if (tx < W * 0.5 && ty > 130 && !joystick.active) {
+            joystick.active = true; joystick.id = t.identifier; joystick.startX = tx; joystick.startY = ty; joystick.curX = tx; joystick.curY = ty; joystick.dist = 0;
+        } else if (!camTouch.active) {
+            camTouch.active = true; camTouch.id = t.identifier; camTouch.lastX = tx; camTouch.lastY = ty;
+        }
+    }
+}, { passive: false });
+
+hudCanvas.addEventListener('touchmove', e => {
+    e.preventDefault();
+    for (let t of e.changedTouches) {
+        if (joystick.active && t.identifier === joystick.id) {
+            const maxD = 55; const dx = t.clientX - joystick.startX; const dy = t.clientY - joystick.startY;
+            const dist = Math.min(maxD, Math.hypot(dx, dy)); const ang = Math.atan2(dy, dx);
+            joystick.dist = dist / maxD; joystick.angle = ang;
+            joystick.curX = joystick.startX + Math.cos(ang) * dist; joystick.curY = joystick.startY + Math.sin(ang) * dist;
+        } else if (camTouch.active && t.identifier === camTouch.id) {
+            camYaw += (t.clientX - camTouch.lastX) * 0.008;
+            camPitch = Math.max(0.18, Math.min(1.2, camPitch + (t.clientY - camTouch.lastY) * 0.006));
+            camTouch.lastX = t.clientX; camTouch.lastY = t.clientY;
+        }
+    }
+}, { passive: false });
+
+hudCanvas.addEventListener('touchend', e => {
+    e.preventDefault();
+    for (let t of e.changedTouches) {
+        if (joystick.active && t.identifier === joystick.id) { joystick.active = false; joystick.dist = 0; }
+        if (camTouch.active && t.identifier === camTouch.id) camTouch.active = false;
+        if (t.identifier === fireTouchId) { isFiring = false; fireTouchId = null; }
+    }
+}, { passive: false });
+
+function toggleVehicle() {
+    if (player.wasted) return;
+    if (player.inCar) {
+        const c = player.inCar; player.x = c.x + Math.cos(c.angle - Math.PI / 2) * 34; player.z = c.z + Math.sin(c.angle - Math.PI / 2) * 34;
+        player.inCar = null; player.mesh.visible = true;
+    } else {
+        let bestCar = null; let minD = 75;
+        for (let c of cars) { if (c.hp > 0 && Math.hypot(c.x - player.x, c.z - player.z) < minD) { minD = Math.hypot(c.x - player.x, c.z - player.z); bestCar = c; } }
+        if (bestCar) {
+            player.inCar = bestCar; player.mesh.visible = false;
+            if (bestCar.hasDriver) {
+                bestCar.hasDriver = false; spawnPed(bestCar.x - Math.sin(bestCar.angle) * 28, bestCar.z + Math.cos(bestCar.angle) * 28, bestCar.isPolice);
+                addWanted(bestCar.isPolice ? 1.5 : 0.6); floatingTexts.push({ text: 'FAHRZEUG GEKAPERT!', color: '#f1c40f', life: 45 });
+            }
+        }
+    }
+}
+
+function fireWeapon() {
+    const now = Date.now();
+    if (player.inCar && player.inCar.isTank) {
+        if (now - player.lastShot < 800) return;
+        player.lastShot = now; playSound('shotgun');
+        createBullet(player.inCar.x + Math.cos(player.inCar.angle) * 40, player.inCar.z + Math.sin(player.inCar.angle) * 40, player.inCar.angle, 13, 300, true, true);
+        return;
+    }
+    const w = weapons[player.weaponIdx];
+    if (now - player.lastShot < w.fireRate) return;
+    player.lastShot = now; playSound(w.name === 'Minigun' ? 'minigun' : (w.name === 'Schrotflinte' ? 'shotgun' : 'shoot'));
+    let aimAngle = player.inCar ? player.inCar.angle : player.angle; let minD = 260;
+    for (let p of peds) {
+        if (!p.ragdoll && Math.hypot(p.x - player.x, p.z - player.z) < minD && (p.isCop || p.isTarget || player.wanted === 0)) {
+            minD = Math.hypot(p.x - player.x, p.z - player.z); aimAngle = Math.atan2(p.z - player.z, p.x - player.x);
+        }
+    }
+    if (!player.inCar) player.angle = aimAngle;
+    const dmgMult = (player.abilityActive && currentCharIdx === 2) ? 3 : 1;
+    for (let i = 0; i < w.count; i++) {
+        const ang = aimAngle + (Math.random() - 0.5) * w.spread;
+        createBullet(player.x + Math.cos(ang) * 14, player.z + Math.sin(ang) * 14, ang, w.speed, w.dmg * dmgMult, w.explosive, true);
+    }
+}
+
+function createBullet(x, z, angle, speed, dmg, explosive, fromPlayer) {
+    const mesh = new THREE.Mesh(new THREE.SphereGeometry(explosive ? 3.5 : 1.8, 6, 6), new THREE.MeshBasicMaterial({ color: explosive ? 0xff4500 : 0xffff00 }));
+    mesh.position.set(x, 12, z); scene.add(mesh);
+    bullets.push({ x, z, vx: Math.cos(angle) * speed, vz: Math.sin(angle) * speed, dmg, explosive, fromPlayer, life: 55, mesh });
+}
+
+function lerpAngle(a, b, t) {
+    let diff = b - a; while (diff < -Math.PI) diff += Math.PI * 2; while (diff > Math.PI) diff -= Math.PI * 2;
+    return a + diff * t;
+}
+
+function update() {
+    if (fxLight.intensity > 0) fxLight.intensity *= 0.88;
+    ammuCorona.rotation.y += 0.03; missionCorona.rotation.y += 0.03;
+
+    if (player.hp <= 0 && !player.wasted) {
+        player.wasted = true; player.wastedTimer = 180; player.inCar = null; player.mesh.visible = true; player.mesh.rotation.z = Math.PI / 2;
+    }
+    if (player.wasted) {
+        player.wastedTimer--;
+        if (player.wastedTimer <= 0) { player.wasted = false; player.hp = 100; player.wanted = 0; player.mesh.rotation.z = 0; player.cash = Math.max(0, player.cash - 150); saveGameState(); }
+        return;
+    }
+
+    let timeScale = 1.0;
+    if (player.abilityActive) {
+        player.abilityCharge -= 0.35; if (player.abilityCharge <= 0) { player.abilityCharge = 0; player.abilityActive = false; }
+        if (currentCharIdx === 0) timeScale = 0.45; if (currentCharIdx === 1 && player.inCar) timeScale = 0.65;
+    } else player.abilityCharge = Math.min(100, player.abilityCharge + 0.08);
+
+    if (isFiring) fireWeapon();
+
+    if (!player.inCar) {
+        if (joystick.dist > 0.1) {
+            player.angle = lerpAngle(player.angle, camYaw + joystick.angle + Math.PI / 2, 0.25);
+            const spd = 4.0 * joystick.dist;
+            const nx = player.x + Math.cos(player.angle) * spd; const nz = player.z + Math.sin(player.angle) * spd;
+            if (!checkBuildingCollision(nx, player.z, player.radius)) player.x = nx;
+            if (!checkBuildingCollision(player.x, nz, player.radius)) player.z = nz;
+            player.walkCycle += spd * 0.18;
+            const swing = Math.sin(player.walkCycle) * 0.6;
+            player.mesh.userData.leftLeg.rotation.z = swing; player.mesh.userData.rightLeg.rotation.z = -swing;
+        }
+        player.mesh.position.set(player.x, 0, player.z); player.mesh.rotation.y = -player.angle;
+    } else {
+        const c = player.inCar;
+        if (joystick.dist > 0.15) {
+            let diff = (camYaw + joystick.angle + Math.PI / 2) - c.angle;
+            while (diff < -Math.PI) diff += Math.PI * 2; while (diff > Math.PI) diff -= Math.PI * 2;
+            const turnRate = (currentCharIdx === 1 && player.abilityActive) ? 0.12 : 0.065;
+            if (Math.abs(diff) > Math.PI * 0.78 && Math.abs(c.speed) < 2.2) c.speed = Math.max(-c.maxSpeed * 0.45, c.speed - c.accel);
+            else { c.angle += Math.sign(diff) * Math.min(Math.abs(diff), turnRate); c.speed = Math.min(c.maxSpeed, c.speed + c.accel * joystick.dist); }
+            if (!camTouch.active && camMode !== 2) camYaw = lerpAngle(camYaw, c.angle, 0.045);
+        } else c.speed *= 0.95;
+        player.x = c.x; player.z = c.z; player.angle = c.angle;
+    }
+
+    if (Math.hypot(player.x - ammuNation.x, player.z - ammuNation.z) < ammuNation.r && document.getElementById('shopModal').style.display !== 'block') openAmmuNation();
+    if (Math.hypot(player.x - missionHub.x, player.z - missionHub.z) < missionHub.r && !activeMission) startNewMission();
+
+    for (let i = cars.length - 1; i >= 0; i--) {
+        const c = cars[i];
+        if (c.hp <= 35 && c.hp > 0) { c.burningTimer++; if (c.burningTimer > 170) c.hp = 0; }
+        if (c.hp <= 0) {
+            triggerExplosion(c.x, c.z);
+            if (player.inCar === c) { player.inCar = null; player.mesh.visible = true; applyDamageToPlayer(40); }
+            scene.remove(c.mesh); cars.splice(i, 1); continue;
+        }
+        if (c !== player.inCar && c.hasDriver) {
+            if (c.isPolice && player.wanted >= 1) {
+                c.angle = lerpAngle(c.angle, Math.atan2(player.z - c.z, player.x - c.x), 0.05 * timeScale);
+                c.speed = Math.min(c.maxSpeed * 0.85, c.speed + c.accel * timeScale);
+            } else {
+                c.speed = Math.min(3.4, c.speed + 0.08 * timeScale);
+                if (checkBuildingCollision(c.x + Math.cos(c.angle)*42, c.z + Math.sin(c.angle)*42, 18)) { c.angle += Math.PI / 2; c.speed *= 0.5; }
+            }
+        } else if (c !== player.inCar) c.speed *= 0.92;
+
+        const effSpeed = c.speed * (c === player.inCar ? 1 : timeScale);
+        const nx = c.x + Math.cos(c.angle) * effSpeed; const nz = c.z + Math.sin(c.angle) * effSpeed;
+        if (!checkBuildingCollision(nx, nz, 18)) { c.x = nx; c.z = nz; } else c.speed *= -0.35;
+        c.mesh.position.set(c.x, 0, c.z); c.mesh.rotation.y = -c.angle;
+
+        if (Math.abs(c.speed) > 2.2) {
+            for (let p of peds) {
+                if (!p.ragdoll && Math.hypot(p.x - c.x, p.z - c.z) < 23) {
+                    p.ragdoll = true; p.vx = Math.cos(c.angle) * Math.abs(c.speed) * 1.3; p.vz = Math.sin(c.angle) * Math.abs(c.speed) * 1.3;
+                    p.vy = 8 + Math.abs(c.speed) * 0.8; p.hp = 0; playSound('scream');
+                    if (c === player.inCar) addWanted(p.isCop ? 1.2 : 0.4);
+                }
+            }
+        }
+    }
+
+    for (let i = peds.length - 1; i >= 0; i--) {
+        const p = peds[i];
+        if (p.ragdoll) {
+            p.x += p.vx; p.z += p.vz; p.y += p.vy; p.vy -= 0.55;
+            p.mesh.position.set(p.x, Math.max(2, p.y), p.z); p.mesh.rotation.x += 0.25; p.mesh.rotation.z += 0.2;
+            if (p.y <= 0) {
+                createBloodDecal(p.x, p.z); player.cash += 35 + Math.floor(Math.random() * 80); playSound('cash'); saveGameState();
+                if (p.isTarget && activeMission && activeMission.type === 'HITMAN') completeMission();
+                scene.remove(p.mesh); peds.splice(i, 1);
+            }
+            continue;
+        }
+        if (p.hp <= 0) { p.ragdoll = true; p.vy = 5; continue; }
+        const dp = Math.hypot(player.x - p.x, player.z - p.z);
+        if (p.isCop && player.wanted >= 1 && dp < 320) {
+            p.angle = Math.atan2(player.z - p.z, player.x - p.x);
+            if (dp > 125) { p.x += Math.cos(p.angle) * 2.1 * timeScale; p.z += Math.sin(p.angle) * 2.1 * timeScale; }
+            p.shootTimer += timeScale;
+            if (p.shootTimer > 55) { p.shootTimer = 0; createBullet(p.x, p.z, p.angle, 9, 8, false, false); playSound('shoot'); }
+        } else {
+            const nx = p.x + Math.cos(p.angle) * timeScale; const nz = p.z + Math.sin(p.angle) * timeScale;
+            if (!checkBuildingCollision(nx, nz, p.radius)) { p.x = nx; p.z = nz; } else p.angle += Math.PI * 0.6;
+        }
+        p.mesh.position.set(p.x, 0, p.z); p.mesh.rotation.y = -p.angle;
+    }
+
+    for (let i = bullets.length - 1; i >= 0; i--) {
+        const b = bullets[i]; const ts = b.fromPlayer ? 1 : timeScale;
+        b.x += b.vx * ts; b.z += b.vz * ts; b.life -= ts; b.mesh.position.set(b.x, 12, b.z);
+        let hit = checkBuildingCollision(b.x, b.z, 3);
+        if (b.fromPlayer) {
+            for (let p of peds) if (!p.ragdoll && Math.hypot(p.x - b.x, p.z - b.z) < p.radius + 5) { p.hp -= b.dmg; hit = true; addWanted(0.35); break; }
+        } else if (Math.hypot(player.x - b.x, player.z - b.z) < 15) {
+            if (player.inCar) player.inCar.hp -= b.dmg * 0.5; else applyDamageToPlayer(b.dmg); hit = true;
+        }
+        for (let c of cars) if (!(b.fromPlayer && c === player.inCar) && Math.hypot(c.x - b.x, c.z - b.z) < 24) { c.hp -= b.dmg; hit = true; break; }
+        if (hit || b.life <= 0) { if (b.explosive) triggerExplosion(b.x, b.z); scene.remove(b.mesh); bullets.splice(i, 1); }
+    }
+
+    for (let i = particles3D.length - 1; i >= 0; i--) {
+        const pt = particles3D[i]; pt.mesh.position.x += pt.vx; pt.mesh.position.y += pt.vy; pt.mesh.position.z += pt.vz;
+        pt.vy -= 0.25; pt.life--;
+        if (pt.life <= 0) { scene.remove(pt.mesh); particles3D.splice(i, 1); }
+    }
+    for (let i = floatingTexts.length - 1; i >= 0; i--) { floatingTexts[i].life--; if (floatingTexts[i].life <= 0) floatingTexts.splice(i, 1); }
+
+    if (player.wanted > 0) {
+        player.wantedDecayTimer--;
+        if (player.wantedDecayTimer <= 0) {
+            player.wanted = Math.max(0, player.wanted - 0.0035);
+            if (activeMission && activeMission.type === 'GETAWAY' && player.wanted === 0) completeMission();
+        }
+    }
+
+    let camDist = camMode === 0 ? (player.inCar ? 125 : 85) : (camMode === 1 ? 210 : 360);
+    let camHeight = camMode === 0 ? (player.inCar ? 55 : 42) : (camMode === 1 ? 125 : 340);
+    camera.position.x += ((player.x - Math.cos(camYaw) * camDist) - camera.position.x) * 0.14;
+    camera.position.z += ((player.z - Math.sin(camYaw) * camDist) - camera.position.z) * 0.14;
+    camera.position.y += ((camHeight * (camPitch / 0.42)) - camera.position.y) * 0.14;
+    camera.lookAt(player.x + Math.cos(camYaw) * (camMode === 2 ? 0 : 35), player.inCar ? 14 : 12, player.z + Math.sin(camYaw) * (camMode === 2 ? 0 : 35));
+}
+
+function drawHUD() {
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = 'rgba(0,0,0,0.7)'; ctx.fillRect(15, 15, 160, 48);
+    ctx.fillStyle = '#c0392b'; ctx.fillRect(20, 20, 150 * Math.max(0, player.hp / player.maxHp), 10);
+    ctx.fillStyle = '#2980b9'; ctx.fillRect(20, 33, 150 * (player.armor / player.maxArmor), 8);
+    ctx.fillStyle = '#f39c12'; ctx.fillRect(20, 44, 150 * (player.abilityCharge / 100), 8);
+
+    ctx.textAlign = 'right'; ctx.font = 'bold 22px Courier New'; ctx.fillStyle = '#2ecc71'; ctx.fillText(`$${player.cash}`, W - 20, 35);
+    ctx.font = 'bold 13px Courier New'; ctx.fillStyle = '#fff'; ctx.fillText(`Waffe: ${weapons[player.weaponIdx].name}`, W - 20, 55);
+
+    const activeStars = Math.floor(player.wanted); ctx.font = '22px sans-serif';
+    for (let s = 1; s <= 5; s++) {
+        ctx.fillStyle = s <= activeStars ? ((Math.floor(Date.now() / 250) % 2 === 0) ? '#f1c40f' : '#e74c3c') : 'rgba(255,255,255,0.25)';
+        ctx.fillText('★', W - 20 - (5 - s) * 24, 82);
+    }
+
+    ctx.textAlign = 'center';
+    floatingTexts.forEach((ft, idx) => { ctx.fillStyle = ft.color; ctx.font = 'bold 15px Courier New'; ctx.fillText(ft.text, W / 2, 95 + idx * 20); });
+
+    const btns = getButtons();
+    for (let key in btns) {
+        const b = btns[key]; ctx.fillStyle = b.color; ctx.globalAlpha = 0.78;
+        ctx.beginPath(); ctx.arc(b.x, b.y, b.r, 0, Math.PI * 2); ctx.fill();
+        ctx.strokeStyle = '#fff'; ctx.lineWidth = 2; ctx.stroke();
+        ctx.globalAlpha = 1.0; ctx.fillStyle = '#fff'; ctx.font = 'bold 10px Courier New'; ctx.fillText(b.label, b.x, b.y + 4);
+    }
+    if (joystick.active) {
+        ctx.strokeStyle = 'rgba(255,255,255,0.45)'; ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.arc(joystick.startX, joystick.startY, 55, 0, Math.PI * 2); ctx.stroke();
+        ctx.fillStyle = 'rgba(255,255,255,0.75)';
+        ctx.beginPath(); ctx.arc(joystick.curX, joystick.curY, 22, 0, Math.PI * 2); ctx.fill();
+    }
+    if (player.wasted) {
+        ctx.fillStyle = 'rgba(140, 0, 0, 0.6)'; ctx.fillRect(0, 0, W, H);
+        ctx.fillStyle = '#e74c3c'; ctx.font = 'bold 52px Courier New'; ctx.fillText('WASTED', W / 2, H / 2);
+    }
+    ctx.textAlign = 'left';
+}
+
+function gameLoop() { update(); renderer.render(scene, camera); drawHUD(); requestAnimationFrame(gameLoop); }
+document.getElementById('startBtn').addEventListener('click', () => { initAudio(); document.getElementById('startScreen').style.display = 'none'; gameLoop(); });
+</script>
+</body>
+</html>
